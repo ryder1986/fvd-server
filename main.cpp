@@ -1,14 +1,13 @@
-#include "mainwindow.h"
-#include <QApplication>
-
+#include <QCoreApplication>
+#include "server.h"
+#include "broadcast_buffer.h"
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-//    w.setWindowFlags(Qt::FramelessWindowHint);
-    w.setWindowState(Qt::WindowMaximized);
-    w.setGeometry(110,110,666,666);
-    w.show();
-
+    QCoreApplication a(argc, argv);
+    broadcast_buffer *b=new broadcast_buffer();
+    qDebug()<<"1";
+    Server *s=new Server();
+    qDebug()<<"2";
     return a.exec();
 }
+
